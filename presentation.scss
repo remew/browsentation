@@ -35,6 +35,8 @@
 	.center-on-small-only	{text-align:center;}
 }
 
+$BROWSENTATION_THEME:#2196F3;
+
 * {
 	font-family:"メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "IPA Pゴシック", "IPAPGothic", "sans", sans-serif;
 	width:100%;
@@ -84,71 +86,47 @@ $BUTTON_WIDTH:88px;
 	position:fixed;
 	top:0;
 	left:0;
-	width:100%;
 	height:100%;
 }
-
-@keyframes slide_in_from_right {
-	0% {
-		left:100%;
-	}
-	100% {
-		left:0%;
-	}
-}
-@keyframes slide_out_to_left {
-	0% {
-		left:0%;
-	}
-	100% {
-		left:-100%;
-	}
-}
-
-$ANIMATION_DURATION:1s;
 
 .sheet {
-	position:fixed;
-	width:100%;
+	position:relative;
 	height:100%;
 	top:0;
-	left:100%;
+	left:0%;
+	float:left;
 	background-color:#fff;
 	z-index:0;
-	&.slide_out {
-		animation-name:slide_out_to_left;
-		animation-duration:$ANIMATION_DURATION;
-		animation-fill-mode:forwards;
-		z-index:999;
-	}
-	&.slide_out_rev {
-		animation:slide_out_to_left;
-		animation-duration:$ANIMATION_DURATION;
-		animation-fill-mode:forwards;
-		animation-direction:reverse;
-		z-index:999;
-	}
-	&.slide_in {
-		animation-name:slide_in_from_right;
-		animation-duration:$ANIMATION_DURATION;
-		animation-fill-mode:forwards;
-		z-index:999;
-	}
-	&.slide_in_rev {
-		animation:slide_in_from_right;
-		animation-duration:$ANIMATION_DURATION;
-		animation-fill-mode:forwards;
-		animation-direction:reverse;
-		z-index:999;
-	}
-
-	&.current {
-		left:0%;
-	}
 	p {
-		text-align:center;
 		vertical-align:middle;
+		margin:0 auto;
 	}
 }
+
+
+.default_front_cover {
+	margin:0 auto;
+	text-align:center;
+	margin-top:10%;
+	h1 {
+		text-align:center;
+		font-size:4em;
+	}
+	h2 {
+		font-size:2em;
+	}
+	span {
+		color:$BROWSENTATION_THEME;
+	}
+}
+.default_back_cover_wrapper {
+	background-color:#000;
+}
+.default_back_cover {
+	margin-top:40%;
+	color:#fff;
+	text-align:center;
+}
+
 
 
