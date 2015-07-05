@@ -88,7 +88,7 @@ $BUTTON_WIDTH:88px;
 	height:100%;
 }
 
-@keyframes sheet_slide_in {
+@keyframes slide_in_from_right {
 	0% {
 		left:100%;
 	}
@@ -96,7 +96,7 @@ $BUTTON_WIDTH:88px;
 		left:0%;
 	}
 }
-@keyframes sheet_slide_out {
+@keyframes slide_out_to_left {
 	0% {
 		left:0%;
 	}
@@ -112,22 +112,38 @@ $ANIMATION_DURATION:1s;
 	width:100%;
 	height:100%;
 	top:0;
-	left:0%;
+	left:100%;
 	background-color:#fff;
 	z-index:0;
-	&.prev {
-		animation-name:sheet_slide_out;
+	&.slide_out {
+		animation-name:slide_out_to_left;
 		animation-duration:$ANIMATION_DURATION;
 		animation-fill-mode:forwards;
 		z-index:999;
 	}
+	&.slide_out_rev {
+		animation:slide_out_to_left;
+		animation-duration:$ANIMATION_DURATION;
+		animation-fill-mode:forwards;
+		animation-direction:reverse;
+		z-index:999;
+	}
+	&.slide_in {
+		animation-name:slide_in_from_right;
+		animation-duration:$ANIMATION_DURATION;
+		animation-fill-mode:forwards;
+		z-index:999;
+	}
+	&.slide_in_rev {
+		animation:slide_in_from_right;
+		animation-duration:$ANIMATION_DURATION;
+		animation-fill-mode:forwards;
+		animation-direction:reverse;
+		z-index:999;
+	}
+
 	&.current {
-		animation-name:sheet_slide_in;
-		animation-duration:$ANIMATION_DURATION;
-		animation-fill-mode:forwards;
-		z-index:999;
-	}
-	&.next {
+		left:0%;
 	}
 	p {
 		text-align:center;

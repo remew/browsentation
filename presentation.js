@@ -14,14 +14,19 @@ window.onload = function() {
 	sheets.eq(0).addClass("current");
 	sheets.eq(1).addClass("next");
 	var go_prev = function() {
+		if( now_page != 0 ) {
+			$(".current").addClass("slide_out_rev").removeClass("current").removeClass("slide_in");
+			sheets.eq(now_page - 1).addClass("current").addClass("slide_in_rev");
+			now_page--;
+		}
 	};
 
 	var go_next = function() {
 		if( now_page != page_num ) {
-			$(".current").addClass("prev").removeClass("current");
-			$(".next").addClass("current").removeClass("next");
+			$(".current").addClass("slide_out").removeClass("current").removeClass("slide_in");
+			//$(".next").addClass("current").addClass("slide_in").removeClass("next");
+			sheets.eq(now_page + 1).addClass("current").addClass("slide_in");
 			now_page++;
-			sheets.eq(now_page).addClass("next");
 		} else {
 			alert("www");
 		}
@@ -43,7 +48,7 @@ window.onload = function() {
 				go_next();
 				break;
 			case right_click:
-				alert("right");
+				go_prev();
 				break;
 		}
 	}, true);
