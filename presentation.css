@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/***************************
+ * Media Query Classes
+ * ************************/
+@media only screen and (min-width: 1024px) {
+  .hide-on-large {
+    display: none !important;
+  }
+
+  .show-on-large {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: inherit !important;
+  }
+
+  .show-med-only {
+    display: none !important;
+  }
+
+  .show-small-only {
+    display: none !important;
+  }
+
+  .show-med-and-large {
+    display: inherit !important;
+  }
+
+  .show-med-and-small {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 541px) and (max-width: 1023px) {
+  .hide-on-med {
+    display: none !important;
+  }
+
+  .show-on-med {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: none !important;
+  }
+
+  .show-med-only {
+    display: inherit !important;
+  }
+
+  .show-small-only {
+    display: none !important;
+  }
+
+  .show-med-and-large {
+    display: inherit !important;
+  }
+
+  .show-med-and-small {
+    display: inherit !important;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hide-on-small {
+    display: none !important;
+  }
+
+  .show-on-small {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: none !important;
+  }
+
+  .show-med-only {
+    display: none !important;
+  }
+
+  .show-small-only {
+    display: inherit !important;
+  }
+
+  .show-med-and-large {
+    display: none !important;
+  }
+
+  .show-med-and-small {
+    display: inherit !important;
+  }
+
+  .center-on-small-only {
+    text-align: center;
+  }
+}
+* {
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "IPA Pゴシック", "IPAPGothic", "sans", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  -webkit-text-size-abjust: 100%;
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+}
+
+#go_prev, #go_next {
+  position: fixed;
+  height: 100%;
+  width: 88px;
+  background-color: #000;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.2s 0s linear;
+  cursor: pointer;
+}
+#go_prev:hover, #go_next:hover {
+  opacity: 0.5;
+}
+
+#go_prev {
+  left: 0;
+}
+
+#go_next {
+  right: 0;
+}
+
+#sheets {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes sheet_slide_in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes sheet_slide_out {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.sheet {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0%;
+  background-color: #fff;
+  z-index: 0;
+}
+.sheet.prev {
+  animation-name: sheet_slide_out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  z-index: 999;
+}
+.sheet.current {
+  animation-name: sheet_slide_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  z-index: 999;
+}
+.sheet p {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*# sourceMappingURL=presentation.css.map */
