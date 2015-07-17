@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/***************************
+ * Media Query Classes
+ * ************************/
+
+@media only screen and (min-width:1024px) {
+	.hide-on-large		{display:none !important;}
+	.show-on-large		{display:inherit !important;}
+	.show-large-only	{display:inherit !important;}
+	.show-med-only		{display:none !important;}
+	.show-small-only	{display:none !important;}
+	.show-med-and-large	{display:inherit !important;}
+	.show-med-and-small	{display:none !important;}
+}
+
+@media only screen and (min-width:541px) and (max-width:1023px) {
+	.hide-on-med		{display:none !important;}
+	.show-on-med		{display:inherit !important;}
+	.show-large-only	{display:none !important;}
+	.show-med-only		{display:inherit !important;}
+	.show-small-only	{display:none !important;}
+	.show-med-and-large	{display:inherit !important;}
+	.show-med-and-small	{display:inherit !important;}
+}
+
+@media only screen and (max-width:540px) {
+	.hide-on-small		{display:none !important;}
+	.show-on-small		{display:inherit !important;}
+	.show-large-only	{display:none !important;}
+	.show-med-only		{display:none !important;}
+	.show-small-only	{display:inherit !important;}
+	.show-med-and-large	{display:none !important;}
+	.show-med-and-small	{display:inherit !important;}
+	.center-on-small-only	{text-align:center;}
+}
+
+$BROWSENTATION_THEME:#2196F3;
+
+* {
+	font-family:"メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "IPA Pゴシック", "IPAPGothic", "sans", sans-serif;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+body, html {
+	height:100%;
+}
+
+.wrapper {
+	width:100%;
+	margin:0 auto;
+	//background-color:#f4f4f4;
+	-webkit-text-size-abjust:100%;
+	position:relative;
+	height:auto !important;
+	min-height:100%;
+}
+
+$BUTTON_WIDTH:88px;
+
+#go_prev, #go_next {
+	position:fixed;
+	height:100%;
+	width:$BUTTON_WIDTH;
+	background-color:#000;
+	opacity:0;
+	z-index:9999;
+	transition:opacity 0.2s 0s linear;
+	cursor:pointer;
+	&:hover {
+		opacity:0.5;
+	}
+}
+
+#go_prev {
+	left:0;
+}
+
+#go_next {
+	right:0;
+}
+
+#sheets {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+}
+
+.sheet {
+	position:relative;
+	height:100%;
+	top:0;
+	left:0%;
+	float:left;
+	background-color:#fff;
+	z-index:0;
+	p {
+		vertical-align:middle;
+		margin:0 auto;
+	}
+}
+
+
+.default_front_cover {
+	margin:0 auto;
+	text-align:center;
+	margin-top:10%;
+	h1 {
+		text-align:center;
+		font-size:4em;
+	}
+	h2 {
+		font-size:2em;
+	}
+	span {
+		color:$BROWSENTATION_THEME;
+	}
+}
+.default_back_cover_wrapper {
+	background-color:#000;
+}
+.default_back_cover {
+	margin-top:40%;
+	color:#fff;
+	text-align:center;
+}
+
+
+
